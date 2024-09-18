@@ -12,6 +12,7 @@
 Repository and Interface Pattern is implemented in this Project to make the application more modular and easier to manage. By using Encapsulation and Abstraction via Repository and Interface Pattern, the application is easier to test.
 
 Instructions to Run the Application:
+
 A. Clone the Project into your system.
 
 B. Run command - composer update, php artisan generate:key
