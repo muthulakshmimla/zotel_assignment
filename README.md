@@ -12,13 +12,21 @@
 Repository and Interface Pattern is implemented in this Project to make the application more modular and easier to manage. By using Encapsulation and Abstraction via Repository and Interface Pattern, the application is easier to test.
 
 Instructions to Run the Application:
-A. Clone the Project into your system
+A. Clone the Project into your system.
+
 B. Run command - composer update, php artisan generate:key
-C. Setup Database in your system
-D. Run command - php artisan migrate
-E. In order to work, the spatie package needs the Imagick and ImageMagick(Both should be compatible with the version of the PHP) to be installed in the system and the php_imagick.dll file needs to be kept inside the php\ext directory in the xampp server.
+
+C. Setup Database in your system.
+
+D. Run command - php artisan migrate.
+
+E. In order to work, the spatie package needs the Imagick and ImageMagick(Both should be compatible with the version of the PHP) to 
+be installed in the system and the php_imagick.dll file needs to be kept inside the php\ext directory in the xampp server.
+
 F. Run command - php artisan storage:link to create a storage link between the public/storage directory and storage/app/public
-G. Run command - php artisan serve to run the project
+
+G. Run command - php artisan serve to run the project.
+
 
 ## About Laravel
 
