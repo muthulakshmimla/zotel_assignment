@@ -13,7 +13,7 @@ Repository and Interface Pattern is implemented in this Project to make the appl
 
 Instructions to Run the Application:
 A. Clone the Project into your system
-B. Run command - composer update
+B. Run command - composer update, php artisan generate:key
 C. Setup Database in your system
 D. Run command - php artisan migrate
 E. In order to work, the spatie package needs the Imagick and ImageMagick(Both should be compatible with the version of the PHP) to be installed in the system and the php_imagick.dll file needs to be kept inside the php\ext directory in the xampp server.
