@@ -37,7 +37,7 @@ class ImageController extends Controller
     {
         try {
             $this->imageRepository->storeImages($request);
-            return redirect()->route('galleries.index')->with('success', 'Images uploaded and processed successfully');
+            return redirect()->route('galleries.index')->with('success', 'Images uploaded successfully!');
         } catch (\Exception $e) {
             Log::error('Failed to store images: ' . $e->getMessage());
             return redirect()->route('galleries.create')->withErrors('Failed to upload images.');
@@ -51,10 +51,10 @@ class ImageController extends Controller
             return view('galleries.edit', compact('gallery'));
         } catch (ModelNotFoundException $e) {
             Log::error('Image not found: ' . $e->getMessage());
-            return redirect()->route('galleries.index')->withErrors('Image not found.');
+            return redirect()->route('galleries.index')->withErrors('Image not found!');
         } catch (\Exception $e) {
             Log::error('Failed to retrieve image for editing: ' . $e->getMessage());
-            return redirect()->route('galleries.index')->withErrors('Failed to retrieve image for editing.');
+            return redirect()->route('galleries.index')->withErrors('Failed to retrieve image for editing!');
         }
     }
 
@@ -62,13 +62,13 @@ class ImageController extends Controller
     {
         try {
             $this->imageRepository->updateImage($request, $id);
-            return redirect()->route('galleries.index')->with('success', 'Gallery updated successfully');
+            return redirect()->route('galleries.index')->with('success', 'Image updated successfully!');
         } catch (ModelNotFoundException $e) {
             Log::error('Image not found for update: ' . $e->getMessage());
-            return redirect()->route('galleries.index')->withErrors('Image not found for update.');
+            return redirect()->route('galleries.index')->withErrors('Image not found for update!');
         } catch (\Exception $e) {
             Log::error('Failed to update gallery: ' . $e->getMessage());
-            return redirect()->route('galleries.edit', $id)->withErrors('Failed to update gallery.');
+            return redirect()->route('galleries.edit', $id)->withErrors('Failed to update gallery!');
         }
     }
 
@@ -76,13 +76,13 @@ class ImageController extends Controller
     {
         try {
             $this->imageRepository->deleteImage($id);
-            return redirect()->route('galleries.index')->with('success', 'Gallery deleted successfully');
+            return redirect()->route('galleries.index')->with('success', 'Image deleted successfully!');
         } catch (ModelNotFoundException $e) {
             Log::error('Image not found for deletion: ' . $e->getMessage());
-            return redirect()->route('galleries.index')->withErrors('Image not found for deletion.');
+            return redirect()->route('galleries.index')->withErrors('Image not found for deletion!');
         } catch (\Exception $e) {
             Log::error('Failed to delete gallery: ' . $e->getMessage());
-            return redirect()->route('galleries.index')->withErrors('Failed to delete gallery.');
+            return redirect()->route('galleries.index')->withErrors('Failed to delete image!');
         }
     }
 }

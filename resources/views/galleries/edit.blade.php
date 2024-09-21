@@ -74,9 +74,9 @@
     <h1>Edit Gallery</h1>
     <div class="form-container">
 
-         @if (session('success'))
+        @if (session('success'))
             <div class="alert alert-success">
-                {{ session('success') }}
+                <strong>{{ session('success') }}</strong> 
             </div>
         @endif
 

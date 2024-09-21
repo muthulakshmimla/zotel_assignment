@@ -17,7 +17,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -87,14 +87,34 @@
         .add-image:hover {
             background-color: #0056b3;
         }
+        .alert {
+            padding: 10px 15px;
+            margin: 10px auto; 
+            border-radius: 5px;
+            font-size: 14px; 
+            display: flex;
+            align-items: center;
+            max-width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            opacity: 1; 
+            transition: opacity 0.5s ease; 
+        }
     </style>
 </head>
 <body>
     <h1>Image Gallery</h1>
     <div class="container">
+
         @if (session('success'))
             <div class="alert alert-success">
-                {{ session('success') }}
+                <strong>{{ session('success') }}</strong> 
             </div>
         @endif
 
@@ -141,6 +161,19 @@
     function confirmDelete() {
         return confirm('Are you sure you want to delete this image?');
     }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const successAlert = document.querySelector('.alert-success');
+        if (successAlert) {
+            setTimeout(() => {
+                successAlert.style.opacity = '0'; 
+                setTimeout(() => {
+                    successAlert.remove(); 
+                }, 500); 
+            }, 2000); 
+        }
+    });
+
 </script>
 
 </html>
